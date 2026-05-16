@@ -1,20 +1,49 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- ONLY LOAD app.js -->
+  <script type="module" src="app.js"></script>
+
+  <title>Star Wars App</title>
 </head>
 <body>
-    <header>
 
-    </header>
-    <div>
+  <header>
+    <h1>Star Wars Database</h1>
 
-    </div>
-    <footer>
-        
-    </footer>
-    
+    <form id="searchForm">
+
+      <select id="swf-categories">
+        <option value="">- Select -</option>
+        <option value="films">Films</option>
+        <option value="people">People</option>
+        <option value="planets">Planets</option>
+        <option value="species">Species</option>
+        <option value="starships">Starships</option>
+        <option value="vehicles">Vehicles</option>
+
+      </select>
+
+      <input
+        id="input"
+        type="text"
+        placeholder="Search..."
+      />
+
+      <button type="submit">
+        Search
+      </button>
+
+    </form>
+  </header>
+
+  <!-- HOME PAGE LIST -->
+  <main id="content"></main>
+
 </body>
 </html>

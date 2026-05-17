@@ -219,7 +219,6 @@ export function renderRelatedLinks(data, rightContainer, currentCategory) {
 
     if (Array.isArray(value) && value.length > 0 ) {
       
-
       const section = document.createElement("div");
       section.classList.add("related-section");
 
@@ -231,7 +230,6 @@ export function renderRelatedLinks(data, rightContainer, currentCategory) {
       const buttonContainer = document.createElement("div"); 
       buttonContainer.classList.add("btn-container"); 
       section.appendChild(buttonContainer)
-      
 
       value.forEach(async (link) => {
 
@@ -245,8 +243,7 @@ export function renderRelatedLinks(data, rightContainer, currentCategory) {
 
           button.addEventListener("click", () => {
 
-            window.location.href =
-              `content.html?url=${encodeURIComponent(link)}`;
+            window.location.href = `content.html?url=${encodeURIComponent(link)}`;
 
           });
 

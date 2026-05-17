@@ -1,12 +1,9 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="style.css" />
-
-  <!-- ONLY LOAD app.js -->
   <script type="module" src="app.js"></script>
 
   <title>Star Wars App</title>
@@ -17,30 +14,27 @@
     <h1>Star Wars Films</h1>
 
     <form id="searchForm">
-        <label for="category">
+        <div>
             <span id="category-error" class="error-message"> * Please select a category</span>
-        </label>
-        <select id="swf-categories">
-            <option value="">- Select a Category -</option>
-            <option value="films">Films</option>
-            <option value="people">People</option>
-            <option value="planets">Planets</option>
-            <option value="species">Species</option>
-            <option value="starships">Starships</option>
-            <option value="vehicles">Vehicles</option>
+        </div>
+        <div class="search-container">
+            <select id="swf-categories">
+                <option value="">- Select a Category -</option>
+                <option value="films">Films</option>
+                <option value="people">People</option>
+                <option value="planets">Planets</option>
+                <option value="species">Species</option>
+                <option value="starships">Starships</option>
+                <option value="vehicles">Vehicles</option>
+            </select>
 
-        </select>
+            <input id="input" type="text" placeholder="serach by name or title"/>
 
-        <input
-            id="input"
-            type="text"
-            placeholder="serach by name or title"
-        />
+            <button id="submit-btn" type="submit">
+                Search
+            </button>
 
-        <button id="submit-btn" type="submit">
-            Search
-        </button>
-
+        </div>
     </form>
   </header>
 

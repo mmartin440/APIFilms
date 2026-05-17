@@ -1,5 +1,3 @@
-// app.js
-
 import {searchCategory,searchSingleItem,searchByURL} from "./api.js";
 import {renderList,renderDetail,renderRelatedLinks} from "./render.js";
 const searchForm = document.getElementById("searchForm");
@@ -37,6 +35,7 @@ searchForm.addEventListener("submit", async (e) => {
       errorMessage.style.display = "none";
 
       // RULE 1
+      // category selected + NO input
       if (!inputValue) {
         const data = await searchCategory(category);
         renderList(data, content, category);
@@ -44,6 +43,7 @@ searchForm.addEventListener("submit", async (e) => {
       }
 
       // RULE 2
+      // category + input
       const match = await searchSingleItem(category, inputValue);
 
       if (match) {
@@ -51,7 +51,11 @@ searchForm.addEventListener("submit", async (e) => {
           ? window.location.href = `content.html?url=${encodeURIComponent(match.properties.url)}`
           : window.location.href = `content.html?url=${encodeURIComponent(match.url)}`;
       } else {
-        content.innerHTML = "<h2>No Match Found</h2>";
+        const noMatch = document.createElement("h2"); 
+        noMatch.classList.add("no-match"); 
+        noMatch.textContent = "No Match Found";
+        content.appendChild(noMatch);
+        
       }
 
     } else {
@@ -59,7 +63,7 @@ searchForm.addEventListener("submit", async (e) => {
     }
 
   } finally {
-    // Re-enable button after request completes
+  
     submitBtn.disabled = false;
   }
 });

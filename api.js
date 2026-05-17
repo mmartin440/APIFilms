@@ -1,4 +1,3 @@
-// api.js
 
 // return an array with list of objects from choice of category
 export async function searchCategory(category) {

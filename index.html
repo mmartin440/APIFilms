@@ -14,35 +14,37 @@
 <body>
 
   <header>
-    <h1>Star Wars Database</h1>
+    <h1>Star Wars Films</h1>
 
     <form id="searchForm">
+        <label for="category">
+            <span id="category-error" class="error-message"> * Please select a category</span>
+        </label>
+        <select id="swf-categories">
+            <option value="">- Select a Category -</option>
+            <option value="films">Films</option>
+            <option value="people">People</option>
+            <option value="planets">Planets</option>
+            <option value="species">Species</option>
+            <option value="starships">Starships</option>
+            <option value="vehicles">Vehicles</option>
 
-      <select id="swf-categories">
-        <option value="">- Select -</option>
-        <option value="films">Films</option>
-        <option value="people">People</option>
-        <option value="planets">Planets</option>
-        <option value="species">Species</option>
-        <option value="starships">Starships</option>
-        <option value="vehicles">Vehicles</option>
+        </select>
 
-      </select>
+        <input
+            id="input"
+            type="text"
+            placeholder="serach by name or title"
+        />
 
-      <input
-        id="input"
-        type="text"
-        placeholder="Search..."
-      />
-
-      <button type="submit">
-        Search
-      </button>
+        <button id="submit-btn" type="submit">
+            Search
+        </button>
 
     </form>
   </header>
 
-  <!-- HOME PAGE LIST -->
+  <img src="./images/background.jpg" alt="start wars" id="homeImage">
   <main id="content"></main>
 
 </body>
